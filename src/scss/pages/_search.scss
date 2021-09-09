@@ -1,0 +1,259 @@
+.hero {
+  margin: 0 4rem;
+  .hero__input--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    margin-bottom: 2rem;
+
+    .hero__input {
+      input {
+        width: 70rem;
+      }
+      button {
+        background-color: #fe8129;
+      }
+    }
+    .hero__list {
+      display: inline-block;
+      // width: 40%;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: uppercase;
+        gap: 2rem;
+        li {
+          font-size: 1.3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+
+          div {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: $color-secondary;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $color-gray;
+            background-color: #eef9fc;
+            svg {
+              width: 2rem;
+              position: relative;
+              top: -2px;
+            }
+          }
+
+          svg {
+            width: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+  .hero__adds--section {
+    width: 50rem;
+    margin: auto;
+    height: 8rem;
+    background-color: #f9fbfc;
+    margin-bottom: 5rem;
+  }
+  .childcareTraining {
+    display: flex;
+    align-items: center;
+    &__section {
+      width: 90%;
+      display: inline-block;
+      &-head {
+        padding: 3rem;
+        width: 75%;
+        margin-left: 4rem;
+        display: flex;
+        align-items: stretch;
+        height: 3rem;
+        .chilldcareTraining__selectbox {
+          margin-right: 2rem;
+          select {
+            color: red;
+            width: 20rem;
+            background-color: #fff;
+            font-size: 1.6rem;
+            option {
+              line-height: 2rem;
+            }
+          }
+        }
+        .childcare__input {
+          width: 50rem;
+        }
+      }
+      .childcareTraining__section-main {
+        box-sizing: border-box;
+        padding: 3rem;
+        .section__main-header {
+          display: flex;
+          align-items: center;
+          background-color: white;
+          .triangleIcon {
+            background-color: red;
+            width: 3rem;
+            height: 2rem;
+          }
+          h1 {
+            span {
+              color: red;
+            }
+          }
+          .filter {
+            margin-left: 2rem;
+            font-size: 1.6rem;
+            select {
+              margin-right: 1rem;
+              background-color: transparent;
+            }
+            .duration {
+              color: #22d1f0;
+            }
+            .language {
+              color: #fe874a;
+            }
+          }
+        }
+        .childcareTraining__filter-banner {
+          display: flex;
+          gap: 3rem;
+          align-items: center;
+          background-color: #f3f5f7;
+          text-transform: uppercase;
+          padding: 1.3rem 3rem;
+          // margin: ;
+
+          .duration {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #22d1f0;
+          }
+          .language {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #fe874a;
+          }
+          .clearAll {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #4b99dd;
+          }
+          img {
+            width: 2rem;
+          }
+        }
+        .coursecard__container {
+          margin: 3rem 0 1rem 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .coursecard {
+            width: 23rem;
+            padding: 1rem;
+            background-color: #f3f5f7;
+            position: relative;
+            margin-bottom: 1rem;
+            &__img {
+              width: 15rem;
+              margin: auto;
+              margin-top: 2rem;
+              display: block;
+              border: 1rem solid white;
+              box-shadow: 0.8rem 0.8rem 0.5rem #1d1d1d;
+            }
+            &__img3 {
+              height: 10.3rem;
+            }
+            h2 {
+              color: #2b4d93;
+            }
+            .coursecard__filterCategory {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              span {
+                font-size: 1.6rem;
+              }
+              .duration {
+                color: #22d1f0;
+              }
+              .priceRange {
+                color: #fe874a;
+              }
+            }
+            .coursecard__footer {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin: 2rem 0;
+            }
+            .coursecard__button {
+              background-color: #9d5eaf;
+              color: white;
+            }
+            .bestsellerTag {
+              width: 10rem;
+              position: absolute;
+              top: -1rem;
+              left: 0;
+            }
+          }
+          .coursecard2 {
+            border: 0.5rem solid #feb531;
+            padding: 0;
+            .coursecard__content {
+              padding: 1rem;
+            }
+            .coursecard__header {
+              background-color: #feb531;
+              color: white;
+              text-align: center;
+              font-weight: 800;
+              font-size: 1.4rem;
+            }
+          }
+          .coursecard3 {
+            border: 0.5rem solid #04badd;
+            padding: 0;
+            .coursecard__content {
+              padding: 1rem;
+            }
+            .coursecard__header {
+              background-color: #04badd;
+              color: white;
+              text-align: center;
+              font-weight: 800;
+              font-size: 1.4rem;
+            }
+          }
+        }
+        .courses__btn {
+          padding: 0.5rem 2rem;
+          background-color: #feb531;
+          border-radius: 0.2rem;
+          display: block;
+          margin: auto;
+        }
+      }
+    }
+    &__sidebar {
+      width: 15%;
+      height: 3rem;
+      background-color: blue;
+      display: inline-block;
+    }
+  }
+}

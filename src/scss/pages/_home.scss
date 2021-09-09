@@ -1,0 +1,205 @@
+.hero {
+  &__info-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    padding: 3rem;
+    background-color: $color-primary;
+    .hero__info-text {
+      width: 50%;
+      display: block;
+      h1 {
+        color: $color-white;
+        line-height: 3rem;
+        width: 50rem;
+        font-size: 2.2rem;
+        span {
+          color: $color-secondary;
+        }
+      }
+      .hero__info-input {
+        position: relative;
+        svg {
+          position: absolute;
+          width: 1.5rem;
+          z-index: 2;
+          left: 0.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        input {
+          width: 25rem;
+          padding-left: 3rem;
+          border-radius: 0.3rem;
+          height: 3rem;
+        }
+        button {
+          width: 10rem;
+          text-transform: uppercase;
+          letter-spacing: 0.2rem;
+          background-color: $color-secondary;
+          color: $color-white;
+          border-top-right-radius: 0.2rem;
+          border-bottom-right-radius: 0.2rem;
+          position: relative;
+          left: -5px;
+        }
+      }
+      .hero__info-icons-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 3rem;
+        button {
+          font-size: 1.5rem;
+          color: $color-white;
+          background-color: $color-secondary;
+          padding: 1.5rem;
+          border-radius: 1rem;
+        }
+        .icons {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 10rem;
+          }
+          .img1 {
+            height: 8.3rem;
+          }
+        }
+      }
+    }
+    .hero__info-img-section {
+      width: 50%;
+
+      .img-wrapper {
+        border: 1rem solid $color-white;
+      }
+    }
+  }
+  &__cards-container {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .hero__card {
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-content: space-between;
+      gap: 1rem;
+      padding-top: 1rem;
+      width: 30rem;
+      height: 41.6rem;
+      border: 0.1rem solid rgba(0, 0, 0, 0.205);
+      overflow: hidden;
+      .card__img-section {
+        img {
+          width: 30rem;
+          height: 20rem;
+        }
+      }
+      .card-text-section {
+        text-align: center;
+        background-color: #eef9fc;
+        padding: 2rem;
+        h1 {
+          background-color: $color-primary;
+          text-transform: uppercase;
+          color: $color-white;
+        }
+        p {
+          font-size: 1.6rem;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+  &__text-section {
+    .hero__textmain {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      border-bottom: 0.2rem solid #f2f2f2;
+      &-text {
+        width: 60%;
+        h1 {
+          font-weight: 400;
+          font-size: 3rem;
+        }
+        p {
+          font-size: 1.5rem;
+          color: rgba(0, 0, 0, 0.5);
+          width: 65rem;
+          padding-bottom: 7rem;
+        }
+      }
+      &-img {
+        width: 40%;
+        background-color: #f2f2f2;
+      }
+    }
+    .hero__textsub {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0;
+
+      .hero__textsub-text1 {
+        width: 33%;
+        h1 {
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+        p {
+          color: rgba(0, 0, 0, 0.5);
+          font-size: 1.3rem;
+          width: 35rem;
+        }
+      }
+    }
+    .hero__textcards {
+      width: 70%;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 20rem;
+      margin-bottom: 10rem;
+      .hero__textcard {
+        text-align: center;
+        // padding: 2rem;
+        background-color: #cbcbcb7a;
+        width: 25rem;
+        padding: 5rem 2rem 8rem;
+
+        img {
+          width: 3rem;
+          background-color: #cbcbcb;
+          border-radius: 50%;
+          padding: 2.5rem 3rem;
+        }
+        h2 {
+          text-transform: uppercase;
+          font-size: 1.4rem;
+          font-weight: 400;
+          margin-bottom: 0;
+        }
+        .firsttext {
+          font-size: 1.4rem;
+          margin-top: 0;
+          color: rgba(0, 0, 0, 0.404);
+        }
+        .secondtext {
+          font-size: 1.4rem;
+          color: rgba(0, 0, 0, 0.404);
+          width: 20rem;
+          margin: auto;
+        }
+      }
+    }
+  }
+}

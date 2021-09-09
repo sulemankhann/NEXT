@@ -1,0 +1,25 @@
+.input__container {
+  display: flex;
+  input,
+  select {
+    border: 0.1rem solid #cbcbcb;
+    padding: 1rem;
+    position: relative;
+    box-sizing: border-box;
+    &::placeholder {
+      color: #cbcbcb;
+      font-size: 1.4rem;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    border: none;
+    background-color: #cbcbcb;
+
+    svg {
+      width: 25px;
+    }
+  }
+}
