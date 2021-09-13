@@ -81,6 +81,7 @@
           select {
             color: red;
             width: 20rem;
+            height: 100%;
             background-color: #fff;
             font-size: 1.6rem;
             option {
@@ -113,7 +114,7 @@
             margin-left: 2rem;
             font-size: 1.6rem;
             select {
-              margin-right: 1rem;
+              margin-left: 1rem;
               background-color: transparent;
             }
             .duration {
@@ -151,8 +152,9 @@
             font-size: 1.2rem;
             color: #4b99dd;
           }
-          img {
+          svg {
             width: 2rem;
+            fill: black;
           }
         }
         .coursecard__container {
@@ -176,6 +178,8 @@
             }
             &__img3 {
               height: 10.3rem;
+              object-fit: cover;
+              position: relative;
             }
             h2 {
               color: #2b4d93;
@@ -199,6 +203,15 @@
               align-items: center;
               justify-content: space-between;
               margin: 2rem 0;
+              svg {
+                width: 3.5rem;
+                height: 3.5rem;
+                stroke: red;
+
+                path {
+                  stroke-width: 1px;
+                }
+              }
             }
             .coursecard__button {
               background-color: #9d5eaf;
@@ -209,6 +222,7 @@
               position: absolute;
               top: -1rem;
               left: 0;
+              z-index: 10;
             }
           }
           .coursecard2 {

@@ -1,9 +1,11 @@
 import type { NextPage } from 'next'
+import type { GetServerSideProps } from 'next'
 import Image from 'next/image'
+import React from 'react'
 
 import Header from 'src/components/Header'
 import Footer from 'src/components/Footer'
-import LearnBox from 'src/components/CourseDetail/Objectives'
+import Objectives from 'src/components/CourseDetail/Objectives'
 import FeaturedReview from 'src/components/CourseDetail/FeaturedReview'
 import Clock from 'src/assets/images/clock.png'
 import Degree from 'src/assets/images/degree.png'
@@ -15,8 +17,13 @@ import PrevIcon from 'src/assets/images/icons/previcon.svg'
 import NextIcon from 'src/assets/images/icons/next.svg'
 import { HeartIcon } from '@heroicons/react/solid'
 import { ThumbUpIcon } from '@heroicons/react/outline'
+import { getCourse } from 'src/graphql/queries'
+import { Course } from 'src/types'
+import { useRouter } from 'next/router'
 
-const CourseDetail: NextPage = () => {
+const CourseDetail: NextPage<{ course: Course }> = ({ course: { hours, fee, description, objectives, states } }) => {
+  const router = useRouter()
+
   return (
     <>
       <Header />
@@ -24,11 +31,14 @@ const CourseDetail: NextPage = () => {
       <div className="hero">
         <div className="courseintro">
           <div className="courseintro__info">
-            <h1>Cultural Diversity Introduction</h1>
-            <p>Understand cultural diversity, stereotypes, prejudices and how to promote a multicultural environment</p>
+            <h1 onClick={() => router.push(`${router.asPath}/learn`)}>Cultural Diversity Introduction</h1>
+
+            <div dangerouslySetInnerHTML={{ __html: description }}></div>
+            {/* {description} */}
+            {/* <p>Understand cultural diversity, stereotypes, prejudices and how to promote a multicultural environment</p> */}
             <div className="courseintro__filterinfo">
               <span>
-                <Image src={Clock} alt="clock" /> 1 Hour{' '}
+                <Image src={Clock} alt="clock" /> {hours} Hour{' '}
               </span>
               <span>
                 <Image src={Degree} alt="degree" />
@@ -75,26 +85,21 @@ const CourseDetail: NextPage = () => {
               <div>
                 <Image src={CartImg} alt="lecture image" layout="fill" />
               </div>
-              <span>$9.99</span>
+              <span>${fee}</span>
               <button className="btn">Add To Cart</button>
             </div>
           </div>
         </div>
 
         <div className="coursedetail">
-          {/* <LearnBox /> */}
+          <Objectives objectives={objectives} />
           <FeaturedReview />
         </div>
         <div className="agreement">
           <h3>Approved or Accepted In :</h3>
-          <p>
-            Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Florida, Hawaii, Idaho, Illinois,
-            Indiana, Iowa, Kansas, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi,
-            Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, North Carolina, North Dakota, Ohio, Oklahoma,
-            Oregon, Pennsylvania, Puerto Rico, South Dakota, Tennessee, Texas, Utah, Vermont, Virgin Islands, Virginia,
-            Washington, Wisconsin
-          </p>
+          <p>{states.map((state) => state.name).join(', ')}</p>
         </div>
+
         <div className="suggestionscroll">
           <p>Students Who Viewed This class Also Viewed</p>
           <div className="scroll">
@@ -112,6 +117,24 @@ const CourseDetail: NextPage = () => {
       <Footer />
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  try {
+    const { params } = context
+    const { course } = await getCourse(params.id)
+
+    return {
+      props: {
+        course,
+      },
+    }
+  } catch (err) {
+    console.error('Cannot get serverside props,', err.message)
+    return {
+      notFound: true,
+    }
+  }
 }
 
 export default CourseDetail

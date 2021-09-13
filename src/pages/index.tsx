@@ -1,20 +1,24 @@
+import React from 'react'
 import type { NextPage } from 'next'
+import type { GetServerSideProps } from 'next'
+
 import Header from 'src/components/Header'
-import LectureCard from 'src/components/Home/LectureCard'
+import School from 'src/components/Home/School'
 import Hero from 'src/components/Home/Hero'
 import Footer from 'src/components/Footer'
+import { getSchools } from 'src/graphql/queries'
+import { HomePageProps } from 'src/types'
 
-const Home: NextPage = () => {
+const Home: NextPage<HomePageProps> = ({ schools }) => {
   return (
     <>
       <Header />
       <div className="hero">
         <Hero />
         <div className="hero__cards-container">
-          <LectureCard />
-          <LectureCard />
-          <LectureCard />
-          <LectureCard />
+          {schools.map((school) => (
+            <School key={school.id} school={school} />
+          ))}
         </div>
         <div className="hero__text-section">
           <div className="hero__textmain">
@@ -86,6 +90,22 @@ const Home: NextPage = () => {
       <Footer />
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps<HomePageProps> = async () => {
+  try {
+    const schools = await getSchools()
+    return {
+      props: {
+        schools,
+      },
+    }
+  } catch (err) {
+    console.error('Cannot get serverside props,', err.message)
+    return {
+      notFound: true,
+    }
+  }
 }
 
 export default Home

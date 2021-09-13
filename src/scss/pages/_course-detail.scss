@@ -6,10 +6,11 @@
     padding: 1rem;
     &__info {
       color: $color-white;
-      width: 65%;
+      width: 60%;
       h1 {
         font-size: 3rem;
         margin: 0;
+        cursor: pointer;
       }
       p {
         width: 53rem;
@@ -43,6 +44,10 @@
             width: 15rem;
             font-size: 1.6rem;
             border: 0.3rem solid $color-white;
+
+            svg {
+              width: 2rem;
+            }
           }
         }
       }
@@ -57,7 +62,7 @@
         }
         h1 {
           font-size: 1.6rem;
-          width: 35rem;
+          max-width: 45rem;
           span {
             color: #318f89;
           }
@@ -82,13 +87,17 @@
     }
     .coursecard__container {
       padding: 2rem;
+      padding-top: 0;
       width: 35%;
-      p {
+      &--price {
+        display: flex;
+        align-items: center;
         font-size: 2rem;
         color: #318f89;
-        margin: 0 0 2rem 0;
-        span {
+        margin: 0;
+        .free {
           color: #feb531;
+          margin: 0 0.5rem;
         }
         img {
           width: 3rem;
@@ -97,20 +106,10 @@
         }
       }
       .coursecard {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-items: center;
-        position: absolute;
-        width: 40rem;
         padding: 2rem;
+        width: 38rem;
         background-color: #eef9fc;
-        img {
-          display: block;
-          width: 40rem;
-          margin: auto;
-          box-shadow: 0.5rem 0.5rem 0.2rem rgba(0, 0, 0, 0.808);
-        }
+        position: absolute;
         span {
           font-size: 2.5rem;
           display: flex;
@@ -121,8 +120,18 @@
           font-size: 2rem;
           color: white;
           background-color: #9d5eaf;
-          margin: 2rem 4rem;
           padding: 2rem;
+          width: 80%;
+          margin: 0 auto;
+          display: inline-block;
+        }
+
+        div {
+          width: 100%;
+          height: 30rem;
+          background-color: orange;
+          position: relative;
+          box-shadow: rgba(0, 0, 0, 0.6) 5px 5px 5px;
         }
       }
     }
@@ -135,14 +144,21 @@
       margin-top: 2rem;
       padding: 2rem;
       border: 0.1rem solid black;
+
       h1 {
         margin-top: 0;
       }
       &-feature {
         display: flex;
-        gap: 2rem;
+        gap: 1rem;
+        margin-left: 1rem;
         align-items: center;
         font-size: 1.3rem;
+
+        svg {
+          width: 2rem;
+        }
+
         p {
           margin: 0.3rem;
         }
@@ -186,13 +202,20 @@
       }
       .review__report {
         display: inline-block;
-        flex-direction: column;
         margin-left: 8rem;
-        img {
-          width: 2rem;
-          padding: 0.5rem;
-          border: 0.1rem solid black;
-          border-radius: 50%;
+
+        .like-dislike-icons {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 0.5rem;
+          svg {
+            width: 2rem;
+            padding: 0.5rem;
+            border: 0.1rem solid black;
+            border-radius: 50%;
+            cursor: pointer;
+          }
         }
         a {
           text-decoration: underline;
@@ -219,6 +242,7 @@
     }
     .scroll {
       display: flex;
+      align-items: center;
       gap: 1rem;
       .course {
         width: 10rem;
@@ -226,6 +250,81 @@
         padding: 1rem;
         background-color: rgba(0, 0, 0, 0.205);
       }
+    }
+  }
+}
+
+.coursecard__container {
+  margin: 3rem 0 1rem 0;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  .coursecard {
+    width: 23rem;
+    padding: 1rem;
+    background-color: #f3f5f7;
+    position: relative;
+    margin-bottom: 1rem;
+    grid-column: span;
+    &__img {
+      width: 15rem;
+      margin: auto;
+      margin-top: 2rem;
+      display: block;
+      border: 1rem solid white;
+      box-shadow: 0.8rem 0.8rem 0.5rem #1d1d1d;
+    }
+    &__img3 {
+      height: 10.3rem;
+      object-fit: cover;
+      position: relative;
+    }
+    h2 {
+      color: #2b4d93;
+      cursor: pointer;
+    }
+    .coursecard__filterCategory {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        font-size: 1.6rem;
+      }
+      .duration {
+        color: #22d1f0;
+      }
+      .priceRange {
+        color: #fe874a;
+      }
+    }
+    .coursecard__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2rem 0;
+      svg {
+        width: 3.5rem;
+        height: 3.5rem;
+        stroke: red;
+
+        path {
+          stroke-width: 1px;
+        }
+      }
+    }
+    .coursecard__button {
+      background-color: #9d5eaf;
+      color: white;
+    }
+    .bestsellerTag {
+      width: 10rem;
+      position: absolute;
+      top: -1rem;
+      left: 0;
+      z-index: 10;
     }
   }
 }
