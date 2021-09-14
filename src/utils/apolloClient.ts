@@ -1,9 +1,10 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
+import { GRAPHQL_API } from 'src/config/constant'
 
 export default async function apolloClient(query, variables = {}) {
   try {
     const client = new ApolloClient({
-      uri: 'http://localhost:1337/graphql',
+      uri: GRAPHQL_API,
       cache: new InMemoryCache(),
     })
     const { data } = await client.query({

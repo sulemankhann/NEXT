@@ -21,7 +21,9 @@ import { getCourse } from 'src/graphql/queries'
 import { Course } from 'src/types'
 import { useRouter } from 'next/router'
 
-const CourseDetail: NextPage<{ course: Course }> = ({ course: { hours, fee, description, objectives, states } }) => {
+const CourseDetail: NextPage<{ course: Course }> = ({
+  course: { title, hours, fee, description, objectives, states },
+}) => {
   const router = useRouter()
 
   return (
@@ -31,7 +33,7 @@ const CourseDetail: NextPage<{ course: Course }> = ({ course: { hours, fee, desc
       <div className="hero">
         <div className="courseintro">
           <div className="courseintro__info">
-            <h1 onClick={() => router.push(`${router.asPath}/learn`)}>Cultural Diversity Introduction</h1>
+            <h1 onClick={() => router.push(`${router.asPath}/learn`)}>{title}</h1>
 
             <div dangerouslySetInnerHTML={{ __html: description }}></div>
             {/* {description} */}

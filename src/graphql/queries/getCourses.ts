@@ -3,7 +3,7 @@ import { gql } from '@apollo/client'
 
 const query = gql`
   query GET_COURSES {
-    courses(limit: 12) {
+    courses(limit: 12, where: { active_ne: "inactive" }) {
       id
       title
       description
