@@ -20,6 +20,8 @@ const query = gql`
           __typename
           body
           body2
+          sequence
+          page
         }
         ... on ComponentCourseInteracts {
           id
@@ -28,6 +30,19 @@ const query = gql`
           type
           question
           answer
+          sequence
+          page
+        }
+      }
+      quiz {
+        id
+        quiz_format
+        quiz_type
+        question
+        explain
+        options {
+          response_text
+          correct
         }
       }
     }

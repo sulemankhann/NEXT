@@ -1,20 +1,21 @@
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variable";
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variable';
 
-@import "base/base";
-@import "base/animations";
-@import "base/typography";
-@import "base/utilities";
+@import 'base/base';
+@import 'base/animations';
+@import 'base/typography';
+@import 'base/utilities';
 
-@import "components/buttons";
-@import "components/icons";
+@import 'components/buttons';
+@import 'components/icons';
 
-@import "layout/header";
-@import "layout/navbar";
-@import "layout/footer";
+@import 'layout/header';
+@import 'layout/navbar';
+@import 'layout/footer';
 
-@import "pages/search";
-@import "pages/course-access";
-@import "pages/course-detail";
-@import "pages/home";
+@import 'pages/search';
+@import 'pages/course-access';
+@import 'pages/course-detail';
+@import 'pages/home';
+@import 'pages/quiz';

@@ -1,0 +1,20 @@
+.quiz {
+  margin-bottom: 20px;
+  .quiz_question {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+  }
+  .quiz_awnser {
+    .quiz_option {
+      label {
+        color: #595760;
+        font-size: 15px;
+        line-height: 24px;
+        padding-right: 20px;
+        font-weight: 400;
+      }
+    }
+  }
+}

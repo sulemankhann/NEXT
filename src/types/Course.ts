@@ -10,6 +10,7 @@ export type CourseStructure = {
 export type Course = {
   hours: number
   fee: string
+  id: number
   title: string
   description: string
   objectives: string

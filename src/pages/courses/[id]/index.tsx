@@ -22,7 +22,7 @@ import { Course } from 'src/types'
 import { useRouter } from 'next/router'
 
 const CourseDetail: NextPage<{ course: Course }> = ({
-  course: { title, hours, fee, description, objectives, states },
+  course: { id, title, hours, fee, description, objectives, states },
 }) => {
   const router = useRouter()
 
@@ -33,7 +33,7 @@ const CourseDetail: NextPage<{ course: Course }> = ({
       <div className="hero">
         <div className="courseintro">
           <div className="courseintro__info">
-            <h1 onClick={() => router.push(`${router.asPath}/learn`)}>{title}</h1>
+            <h1 onClick={() => router.push(`/dashboard/learn/${id}/1`)}>{title}</h1>
 
             <div dangerouslySetInnerHTML={{ __html: description }}></div>
             {/* {description} */}
